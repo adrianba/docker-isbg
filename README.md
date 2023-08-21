@@ -1,16 +1,16 @@
-isbg
-====
-* run isbg and spamassassin in a container
+# isbg
+
+- run isbg and spamassassin in a container
 
 ```yaml
 ---
 # docker-compose.yml
-version: '3.0'
+version: "3.0"
 volumes:
   track: {}
 services:
   isbg:
-    image: rbicker/isbg:latest
+    image: ghcr.io/adrianba/docker-isbg:latest
     volumes:
       - track:/track
     environment:
