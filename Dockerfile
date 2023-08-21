@@ -3,7 +3,9 @@ ENV TRACKFILE="track"
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     procps \
     spamassassin \
+    unbound \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install isbg
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./*.sh /
+RUN /bin/bash /setup.sh
 CMD /entrypoint.sh
